@@ -1,6 +1,7 @@
 <?php
-class ItemFactory extends Factory
+class ItemFactory extends AbstractFactory
 {
+	// Rückgabe der Factory
 	private $itemController;
 	
 	public function __construct()
@@ -19,9 +20,21 @@ class ItemFactory extends Factory
 		}
 	}	
 	
-	abstract protected function getBasicSCItem($id = 0);
+	/*
+	 * Das BasicItem hat keine Unter-Objekte 
+	 */
+	
+	abstract protected function getBasicItem($id = 0);
+	
+	/*
+	 * Das FullItem bau alle Unter-Objekte auf
+	 */
 	
 	abstract protected function getFullItem($id = 0);
+	
+	/*
+	 * Weitere Abstufungen zwischen Basic und Full auch möglich
+	 */
 	
 }
 ?>

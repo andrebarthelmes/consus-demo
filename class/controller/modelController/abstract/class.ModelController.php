@@ -1,4 +1,9 @@
 <?php
+
+/*
+ * Jeder ModelController verwaltet ein Model, die abstrakte Eltern Klasse aller Model-Controller legt den Zugriff darauf fest
+ */
+
 abstract class ModelController 
 {
 	private $model;

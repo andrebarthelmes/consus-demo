@@ -1,4 +1,9 @@
 <?php
+
+/*
+ * Template Klasse: Datenbank-Namen für Tabllen und Spalten werden definiert und auf getter und setter gemapt.
+*/
+
 abstract class TemplateShoppingCartItem extends Model
 {
 	protected $table = 'shopping_cart_item';

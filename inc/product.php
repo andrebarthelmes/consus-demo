@@ -1,7 +1,9 @@
 <?php 
 
 /*
- *  
+ * Inc-File einer Seite. Anhand der Params wird die entsprechende Methode im Use-Case-Controller 
+ * aufgerufen. Diese "konfigurieren" des Objekt. Wenn alles fertig konfiguriert ist werden die 
+ * nötigen Variablen von dort geholt und an smarty übergeben.
  */
 
 $global['inc']['vert']		= 'navigation.tpl';

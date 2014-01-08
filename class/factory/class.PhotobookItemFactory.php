@@ -10,6 +10,7 @@ class PhotobookItemFactory extends ItemFactory
 	public function getBasicSCItem($_id = 0)
 	{
 		$this->itemController = new PhotoBookItemController();
+		// Wenn id vorhanden fülle mit Werten aus DB
 		if($_id != 0)
 		{
 			$this->itemController->getModel()->loadDBValuesIntoObject($_id);

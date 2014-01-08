@@ -1,4 +1,10 @@
 <?php
+
+/*
+ * Erweiterung des "Datenbank"-SC-Items um z.B. Unterobjekte wie $item
+ * muss "abstract" sein ?
+ */
+
 class ShoppingCartItem extends TemplateShoppingCartItem
 {
 	private $item;

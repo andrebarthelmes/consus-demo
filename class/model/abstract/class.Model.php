@@ -1,4 +1,8 @@
 <?php
+/*
+ * Abstrakte Mutter-Klasse aller Models. Attribute, die einem Datenbank-Feld entsprechen (also keine Unter-Objekte sind) landen in einer Map.
+ */
+
 abstract class Model
 {
 	protected $table;
@@ -13,6 +17,18 @@ abstract class Model
 	{
 		$this->map[$_key]['value'] = $_value;
 	}
+	
+	private function setMap($_map)
+	{
+		foreach ($this->map as $key => $value)
+		{
+			$this->set($key, isset($_map[$key]) ? $_map[$key]['value'] : '');
+		}	
+	}	
+	
+	/*
+	 * Lädt Werte aus der Datenbankzeile, identifiziert über den Wert $_id in der Spalte $_idRowName ins Objekt
+	 */
 	
 	public function loadDBValuesIntoObject($_id, $_idRowName = 'id')
 	{
@@ -30,15 +46,7 @@ abstract class Model
 	
 		$this->setMap(wk_row_to_map($row, $this->map));
 	}	
-	
-	private function setMap($_map)
-	{
-		foreach ($this->map as $key => $value)
-		{
-			$this->set($key, isset($_map[$key]) ? $_map[$key]['value'] : '');
-		}	
-	}	
-	
+		
 	abstract public function saveObjectValuesIntoDB();		
 	
 }

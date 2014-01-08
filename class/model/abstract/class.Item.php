@@ -1,4 +1,10 @@
 <?php
+
+/*
+ * Erweiterung des "Datenbank"- Items um z.B. Unterobjekte wie $imageField
+ * muss "abstract" sein ?
+*/
+
 class Item extends TemplateItem
 {	
 	private $imageField;

@@ -10,6 +10,7 @@ class PhotobookShoppingCartItemFactory extends ShoppingCartItemFactory
 	public function getBasicSCItem($_id = 0)
 	{
 		$this->shoppingCartItemController = new PhotobookShoppingCartItemController();
+		// Wenn id vorhanden fülle mit Werten aus DB
 		if($_id != 0)
 		{
 			$this->shoppingCartItemController->getModel()->loadDBValuesIntoObject($_id);
